@@ -34,21 +34,23 @@ public class ListDemoWeekdays {
 		System.out.println("************************************************");
 		
 		//removing elements ----------YOU CANT USE SHORT FOR LOOP FOR REMOVING ELEMENTS, BECAUSE YOU NEED TO HAVE A REFERENCE TO INDEX
-		for(String element : weekdays) {
-			if(element.contains("Monday")) {
-				weekdays.remove(element);
-			}
-		} ////wrong example
-		
-		Iterator<String> iterator = weekdays.iterator();
-		
-		//in order to modify, delete or etc from the list, you need to refer to index NOT ELEMENT
-		while(iterator.hasNext()) {
-			String itrValue = iterator.next();
-			if (itrValue.equals("Monday")) {
-				iterator.remove(); 
+		for(int i = 0; i < weekdays.size(); i++) {
+			if("Monday".equals(weekdays.get(i))) {
+				weekdays.remove(i);
 			}
 		}
+		
+
+		
+//		Iterator<String> iterator = weekdays.iterator();
+		
+//		//in order to modify, delete or etc from the list, you need to refer to index NOT ELEMENT
+//		while(iterator.hasNext()) {
+//			String itrValue = iterator.next();
+//			if (!(itrValue.equals("Sunday") || itrValue.equals("Saturday")) ) {
+//				iterator.remove(); 
+//			}
+//		}
 		
 //		weekdays.remove(0);
 //		weekdays.remove("Tuesday");
